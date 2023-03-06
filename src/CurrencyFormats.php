@@ -4,7 +4,12 @@ namespace Chandachewe\Currency;
 
 class CurrencyFormats
 {
-    public static $formats = [
+    /**
+     * Supported currencies.
+     *
+     * @var formats
+     */
+    public static $formats = array (
 
         'AED',
         'AFN',
@@ -176,5 +181,5 @@ class CurrencyFormats
         'ZMW',
         'ZWL',
 
-    ];
+    );
 }
