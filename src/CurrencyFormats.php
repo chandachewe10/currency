@@ -9,7 +9,7 @@ class CurrencyFormats
      *
      * @var formats
      */
-    public static $formats = array (
+    public static $formats = [
 
         'AED',
         'AFN',
@@ -181,5 +181,5 @@ class CurrencyFormats
         'ZMW',
         'ZWL',
 
-    );
+    ];
 }
