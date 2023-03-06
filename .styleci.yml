@@ -1,0 +1,22 @@
+risky: false
+
+version: 8.0
+
+preset: recommended
+
+tab-width: 4
+
+finder:
+  exclude:
+    - "tests"
+    - "vendor"
+  name:
+    - "*.php"
+  not-name:
+    - "*composer.json"
+    - "*.gitignore"
+    - "*phpunit.xml"
+  
+  path:
+    - "src"
+  
