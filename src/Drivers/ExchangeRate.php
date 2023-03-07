@@ -41,9 +41,8 @@ else{
 
 public function hydrate($response){
 $data = json_decode($response, TRUE);
-$currency_and_rates  = explode(':',$data['rates']);
 
-return CurrencyFormats::$formats = $currency_and_rates[0];
+return CurrencyFormats::$formats = $data['rates'][0];
 
 }
 

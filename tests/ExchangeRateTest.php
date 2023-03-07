@@ -189,7 +189,8 @@ it('asserts ExchangeRate is Working Fine', function () {
     
    
        // Assert
-       expect($data['rates']['ZMW'])->toEqual(20.033589);
+       expect($data['rates']['AED'])->toEqual(3.672471);
+       expect(CurrencyFormats::$formats[0])->toEqual('AED');
       
 });
 
