@@ -1,5 +1,5 @@
 <?php  
-namespace Chandachewe\Currency;  
+namespace Chandachewe\Currency\Exceptions;  
 class CurrencyNotFoundException extends \Exception{
     public function invalidCurrency() {
       //error message
