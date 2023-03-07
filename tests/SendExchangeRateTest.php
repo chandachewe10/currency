@@ -5,7 +5,8 @@ use Chandachewe\Currency\Drivers\ExchangeRate;
 
 it('asserts ExchangeRate request is working Fine', function () {
     // Prepare
-    $response = new ExchangeRate('USD','AED');
+    $response = new ExchangeRate();
+    $response->exchange('USD','AED');
 
     // Act
 

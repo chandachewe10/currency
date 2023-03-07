@@ -12,7 +12,7 @@ use GuzzleHttp\Client;
 
 class ExchangeRate
 {
-    public function __construct($base_currency,$referenceCurrency)
+    public function exchange($base_currency,$referenceCurrency)
     {
         try {
             $check_if_valid_base_currency = in_array($base_currency, CurrencyFormats::$formats);
