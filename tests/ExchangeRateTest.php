@@ -1,7 +1,8 @@
 <?php 
+require_once './vendor/autoload.php';   
 use Chandachewe\Currency\CurrencyFormats;  
 
-it('asserts ExchangeRate is Working Fine', function () {
+it('asserts ExchangeRate Array is Working Fine', function () {
     // Prepare
     $requestResponse = '{
         "motd": {

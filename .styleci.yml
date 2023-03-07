@@ -8,7 +8,6 @@ tab-width: 4
 
 finder:
   exclude:
-    - "tests"
     - "vendor"
   name:
     - "*.php"
@@ -19,4 +18,5 @@ finder:
   
   path:
     - "src"
+    - "tests"
   
