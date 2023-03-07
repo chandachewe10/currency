@@ -1,6 +1,7 @@
-<?php 
-require_once './vendor/autoload.php';   
-use Chandachewe\Currency\CurrencyFormats;  
+<?php
+
+require_once './vendor/autoload.php';
+use Chandachewe\Currency\CurrencyFormats;
 
 it('asserts ExchangeRate Array is Working Fine', function () {
     // Prepare
@@ -186,21 +187,9 @@ it('asserts ExchangeRate Array is Working Fine', function () {
     }';
 
     // Act
-    $data = json_decode($requestResponse, TRUE);
-    
-   
-       // Assert
-       expect($data['rates']['AED'])->toEqual(3.672471);
-       expect(CurrencyFormats::$formats[0])->toEqual('AED');
-      
+    $data = json_decode($requestResponse, true);
+
+    // Assert
+    expect($data['rates']['AED'])->toEqual(3.672471);
+    expect(CurrencyFormats::$formats[0])->toEqual('AED');
 });
-
-
-
-
-
-
-
-
-
-?>

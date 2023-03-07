@@ -1,5 +1,6 @@
-<?php  
-require_once './vendor/autoload.php'; 
+<?php
+
+require_once './vendor/autoload.php';
 use Chandachewe\Currency\CurrencyFormats;
 
 it('asserts Currency is Valid', function () {
@@ -12,6 +13,3 @@ it('asserts Currency is Valid', function () {
     // Assert
     expect($check_if_valid)->toEqual(1);
 });
-
-
-?>
