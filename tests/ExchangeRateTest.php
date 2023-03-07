@@ -193,3 +193,4 @@ it('asserts ExchangeRate Array is Working Fine', function () {
     expect($data['rates']['AED'])->toEqual(3.672471);
     expect(CurrencyFormats::$formats[0])->toEqual('AED');
 });
+?>

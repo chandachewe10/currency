@@ -12,18 +12,25 @@ use GuzzleHttp\Client;
 
 class ExchangeRate
 {
-    public function __construct($base_currency)
+    public function __construct($base_currency,$referenceCurrency)
     {
         try {
-            if (!$base_currency) {
-                throw new CurrencyNotFoundException($base_currency);
-            } else {
+            $check_if_valid_base_currency = in_array($base_currency, CurrencyFormats::$formats);
+            $check_if_valid_reference_currency = in_array($referenceCurrency, CurrencyFormats::$formats);
+            if (!$check_if_valid_base_currency) {
+                throw new CurrencyNotFoundException($check_if_valid_base_currency);
+            } 
+           elseif(!$check_if_valid_reference_currency){
+            throw new CurrencyNotFoundException($check_if_valid_reference_currency);
+           } 
+            
+            else {
                 $client = new Client([
                     'base_uri' => $_ENV['BASE_URL_EXCHANGERATE'],
                     'timeout'  => 120.0,
                 ]);
                 $response = $client->request('GET', 'latest?base='.$base_currency);
-                $this->hydrate($response->getBody());
+                $this->hydrate($response->getBody(),$referenceCurrency);
             }
         } catch (CurrencyNotFoundException $e) {
             $errorMessage = $e->invalidCurrency();
@@ -32,10 +39,11 @@ class ExchangeRate
         }
     }
 
-    public function hydrate($response)
+    public function hydrate($response,$referenceCurrency)
     {
         $data = json_decode($response, true);
-
-        return CurrencyFormats::$formats[0] = $data['rates']['AED'];
+        $positionOfReferenceCurrency = array_search($referenceCurrency,CurrencyFormats::$formats); 
+        CurrencyFormats::$formats[$positionOfReferenceCurrency] = $data['rates'][$referenceCurrency];
+        return CurrencyFormats::$formats[$positionOfReferenceCurrency];
     }
 }

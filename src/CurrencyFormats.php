@@ -4,6 +4,8 @@ namespace Chandachewe\Currency;
 
 class CurrencyFormats
 {
+
+    
     /**
      * Supported currencies.
      *
@@ -182,4 +184,12 @@ class CurrencyFormats
         'ZWL',
 
     ];
+
+
+    public static $convertedCurrency;
 }
+
+
+
+
+?>

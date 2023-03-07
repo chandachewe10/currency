@@ -5,7 +5,7 @@ use Chandachewe\Currency\Drivers\ExchangeRate;
 
 it('asserts ExchangeRate request is working Fine', function () {
     // Prepare
-    $response = new ExchangeRate('USD');
+    $response = new ExchangeRate('USD','AED');
 
     // Act
 
@@ -13,3 +13,4 @@ it('asserts ExchangeRate request is working Fine', function () {
     // Assert
     expect($AED_currency)->toBeFloat();
 });
+?>
