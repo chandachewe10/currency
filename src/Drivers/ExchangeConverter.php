@@ -45,6 +45,3 @@ class ExchangeConverter
         return CurrencyConverted::$currency_conversion;
     }
 }
-
-
-?>
