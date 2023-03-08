@@ -186,7 +186,7 @@ class CurrencyFormats
     ];
 
 
-    public static $convertedCurrency;
+    
 }
 
 
