@@ -18,7 +18,7 @@ Install currency using `composer require`:
 composer require chandachewe/currency
 ```
 
-Add the  `namespaces and vendor/autoload in the file you will be doing your conversions from. Am assuming the file is in the root directory together with the vendor. In your file include the following on top`:
+Add the  `namespaces and vendor/autoload in the file you will be doing your conversions from. Am assuming the file and the vendor are both in the root directory. In your file include the following on top`:
 
 
 ```php
@@ -33,7 +33,7 @@ Add the  `namespaces and vendor/autoload in the file you will be doing your conv
 ## Usage
 
 ### Convert Amount from One Currency to the other
-You can convert the amount from one currency to the other using the follwoing code:
+You can convert the amount from one currency to the other using the following code:
 
 ```php
 ExchangeConverter::convert('amount', 'from this currency', 'to this currency');
@@ -45,23 +45,23 @@ Suppose I want to convert 10 USD to GBP then my code will be:
 
 ExchangeConverter::convert(10, 'USD', 'GBP');
 
-Then you can retrieve the result as: 
+Then you can retrieve the result as follows: 
 echo CurrencyConverted::$currency_conversion 
 
 
 ```
 
 
-### Obtain the Exchange rate between two currecncies
-You can also obtain the exchange rates between two currencies as: 
+### Obtain the Exchange rate between two currencies
+You can also obtain the exchange rates between two currencies as follows: 
 ```php
 ExchangeRate::exchange('from this currency', 'to this currency');
-`
-Suppose I want to obtain the exchange rate between 1 USD and the GBP then my code will be:
+
+Suppose I want to obtain the exchange rate between 1 USD and the GBP then my code will be as follows:
 
 ExchangeRate::exchange('USD', 'GBP');
 
-Then you can retrieve the result as: 
+Then you can retrieve the result as follows: 
 
 echo CurrencyConverted::$currency_rate;
 
@@ -70,13 +70,11 @@ echo CurrencyConverted::$currency_rate;
 
 ### Available Drivers
 
-Available drivers:
 
 - [Exchangerates](https://exchangerate.host/) 
 
-## Versioning
 
-Currency is versioned under the Semantic Versioning guidelines as much as possible.
+## Versioning
 
 Releases will be numbered with the following format:
 
@@ -87,7 +85,7 @@ Releases will be numbered with the following format:
 ## Supported Currency Formats
 
 ```
-"AED",
+        "AED",
         "AFN",
         "ALL",
         "AMD",
