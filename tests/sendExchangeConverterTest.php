@@ -7,7 +7,6 @@ use Chandachewe\Currency\Drivers\ExchangeConverter;
 it('asserts ExchangeConverter request is working Fine', function () {
     // Prepare
     ExchangeConverter::convert(1, 'USD', 'ZMW');
-    
 
     // Act
 
