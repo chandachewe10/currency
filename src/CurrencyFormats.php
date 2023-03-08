@@ -4,8 +4,6 @@ namespace Chandachewe\Currency;
 
 class CurrencyFormats
 {
-
-    
     /**
      * Supported currencies.
      *
@@ -185,11 +183,4 @@ class CurrencyFormats
 
     ];
 
-
-    
 }
-
-
-
-
-?>

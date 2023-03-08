@@ -1,12 +1,13 @@
 <?php
+
 require_once './vendor/autoload.php';
-use Chandachewe\Currency\Drivers\ExchangeConverter;
 use Chandachewe\Currency\CurrencyConverted;
+use Chandachewe\Currency\Drivers\ExchangeConverter;
 
 it('asserts ExchangeConverter request is working Fine', function () {
     // Prepare
-    $response = new ExchangeConverter();
-    $response->convert(1,'USD','ZMW');
+    ExchangeConverter::convert(1, 'USD', 'ZMW');
+    
 
     // Act
 
@@ -14,6 +15,3 @@ it('asserts ExchangeConverter request is working Fine', function () {
     // Assert
     expect($ZMW_currency)->toBeFloat();
 });
-
-
-?>

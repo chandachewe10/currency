@@ -12,4 +12,3 @@ class CurrencyNotFoundException extends \Exception
         return $errorMsg;
     }
 }
-?>
