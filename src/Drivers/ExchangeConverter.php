@@ -30,7 +30,7 @@ public function convert($amount, $from, $to)
                 'timeout'  => 120.0,
             ]);
             $response = $client->request('GET', 'convert?from='.$from.'&to='.$to.'&amount='.$amount);
-            $this->Results($response->getBody());
+            $this->hydrate($response->getBody());
             
         }
     } catch (CurrencyNotFoundException $e) {
@@ -42,7 +42,7 @@ public function convert($amount, $from, $to)
 
 
 
-public function Results($response){
+public function hydrate($response){
     $data = json_decode($response, true);
     CurrencyConverted::$currency_conversion = $data['result'];
 

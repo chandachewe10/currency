@@ -13,3 +13,6 @@ it('asserts Currency is Valid', function () {
     // Assert
     expect($check_if_valid)->toEqual(1);
 });
+
+
+?>

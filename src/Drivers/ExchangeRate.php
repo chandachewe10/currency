@@ -47,3 +47,4 @@ class ExchangeRate
         return CurrencyFormats::$formats[$positionOfReferenceCurrency];
     }
 }
+?>

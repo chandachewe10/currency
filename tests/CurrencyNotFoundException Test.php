@@ -21,3 +21,4 @@ it('asserts CurrencyNotFoundException is Valid', function () {
     // Assert
     expect($errorMessage)->toContain('Whoops, this');
 });
+?>

@@ -13,3 +13,4 @@ it('asserts DotEnv is working Fine', function () {
     // Assert
     expect($base_url_exchangerate)->toEqual($dot_env_base_url_exchangerate);
 });
+?>

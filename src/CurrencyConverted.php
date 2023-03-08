@@ -7,7 +7,7 @@ class CurrencyConverted
 
     
     /**
-     * Supported currencies.
+     * Converted Currency.
      *
      * @var formats
      */
