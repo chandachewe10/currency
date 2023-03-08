@@ -1,5 +1,5 @@
 <?php
-
+use Chandachewe\Currency\CurrencyConverted;
 use Chandachewe\Currency\CurrencyFormats;
 use Chandachewe\Currency\Drivers\ExchangeRate;
 
@@ -9,7 +9,10 @@ it('asserts ExchangeRate request is working Fine', function () {
 
     // Act
 
-    $AED_currency = CurrencyFormats::$formats[0];
+    $AED_currency = CurrencyConverted::$currency_rate;
     // Assert
     expect($AED_currency)->toBeFloat();
 });
+
+
+?>

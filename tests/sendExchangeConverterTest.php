@@ -14,3 +14,6 @@ it('asserts ExchangeConverter request is working Fine', function () {
     // Assert
     expect($ZMW_currency)->toBeFloat();
 });
+
+
+?>
