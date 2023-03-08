@@ -3,8 +3,8 @@
 namespace Chandachewe\Currency\Drivers;
 
 require '.../../vendor/autoload.php';
-use Chandachewe\Currency\CurrencyFormats;
 use Chandachewe\Currency\CurrencyConverted;
+use Chandachewe\Currency\CurrencyFormats;
 use Chandachewe\Currency\Exceptions\CurrencyNotFoundException;
 
 $dotenv = \Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
@@ -44,9 +44,5 @@ class ExchangeRate
         CurrencyConverted::$currency_rate = $data['rates'][$referenceCurrency];
 
         return CurrencyConverted::$currency_rate;
-       
     }
 }
-
-
-?>

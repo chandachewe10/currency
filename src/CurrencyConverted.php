@@ -12,4 +12,3 @@ class CurrencyConverted
     public static $currency_conversion;
     public static $currency_rate;
 }
-?>

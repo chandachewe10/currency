@@ -1,6 +1,6 @@
 <?php
+
 use Chandachewe\Currency\CurrencyConverted;
-use Chandachewe\Currency\CurrencyFormats;
 use Chandachewe\Currency\Drivers\ExchangeRate;
 
 it('asserts ExchangeRate request is working Fine', function () {
@@ -13,6 +13,3 @@ it('asserts ExchangeRate request is working Fine', function () {
     // Assert
     expect($AED_currency)->toBeFloat();
 });
-
-
-?>
