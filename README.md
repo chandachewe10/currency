@@ -84,8 +84,6 @@ Releases will be numbered with the following format:
 
 ## Supported Currency Formats
 
-## Supported Currency Formats
-
 - AED
 - AFN
 - ALL
