@@ -78,13 +78,13 @@ echo CurrencyConverted::$currency_rate;
 
 Releases will be numbered with the following format:
 
-```
+```bash
 <major>.<minor>.<patch>
 ```
 
 ## Supported Currency Formats
 
-```
+```bash
         "AED",
         "AFN",
         "ALL",
