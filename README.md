@@ -18,7 +18,7 @@ Install currency using `composer require`:
 composer require chandachewe/currency
 ```
 
-Add the  `namespaces and vendor/autoload in the file you will be doing your conversions from. Am assuming the file and the vendor are both in the root directory. In your file include the following on top`:
+Add the namespaces and vendor/autoload in the file you will be doing your conversions from. Am assuming the file and the vendor are both in the root directory. In your file include the following on top:
 
 
 ```php
@@ -37,18 +37,17 @@ You can convert the amount from one currency to the other using the following co
 
 ```php
 ExchangeConverter::convert('amount', 'from this currency', 'to this currency');
-
+```
 > **Important**: See the supoorted currency formats below. 
 >  Use of unsupoorted formats will throw an exception
 
 Suppose I want to convert 10 USD to GBP then my code will be:
-
+```php
 ExchangeConverter::convert(10, 'USD', 'GBP');
-
+```
 Then you can retrieve the result as follows: 
+```php
 echo CurrencyConverted::$currency_conversion 
-
-
 ```
 
 
@@ -56,15 +55,15 @@ echo CurrencyConverted::$currency_conversion
 You can also obtain the exchange rates between two currencies as follows: 
 ```php
 ExchangeRate::exchange('from this currency', 'to this currency');
+```
 
 Suppose I want to obtain the exchange rate between 1 USD and the GBP then my code will be as follows:
-
+```php
 ExchangeRate::exchange('USD', 'GBP');
-
+```
 Then you can retrieve the result as follows: 
-
+```php
 echo CurrencyConverted::$currency_rate;
-
 ```
 ## Drivers
 
