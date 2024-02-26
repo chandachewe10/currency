@@ -38,8 +38,8 @@ You can convert the amount from one currency to the other using the following co
 ```php
 ExchangeConverter::convert('amount', 'from this currency', 'to this currency');
 ```
-> **Important**: See the supoorted currency formats below. 
->  Use of unsupoorted formats will throw an exception
+> **Important**: See the supported currency formats below. 
+>  Use of unsupported formats will throw an exception
 
 Suppose I want to convert 10 USD to GBP then my code will be:
 ```php
