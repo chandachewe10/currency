@@ -12,7 +12,6 @@ class DriverFormats
     public static $formats = [
 
         'EXCHANGERATE',
-       
 
     ];
 }
