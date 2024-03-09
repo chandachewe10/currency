@@ -5,9 +5,9 @@ namespace Chandachewe\Currency\Drivers;
 require '.../../vendor/autoload.php';
 use Chandachewe\Currency\CurrencyConverted;
 use Chandachewe\Currency\CurrencyFormats;
-use Chandachewe\Currency\Exceptions\CurrencyNotFoundException;
-use Chandachewe\Currency\Exceptions\ApiKeyNotFoundException;
 use Chandachewe\Currency\DriverAccessKeys\ExchangeRateDriverAccessKey;
+use Chandachewe\Currency\Exceptions\ApiKeyNotFoundException;
+use Chandachewe\Currency\Exceptions\CurrencyNotFoundException;
 
 $dotenv = \Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
@@ -25,16 +25,14 @@ class ExchangeRate
             } elseif (!$check_if_valid_reference_currency) {
                 throw new CurrencyNotFoundException($referenceCurrency);
             } else {
-
                 $api_key = ExchangeRateDriverAccessKey::$exchangerate_access_key;
                 if (empty($api_key) || is_null($api_key)) {
                     throw new ApiKeyNotFoundException(ExchangeRateDriverAccessKey::$exchangerate_access_key);
                 }
 
-
                 $client = new Client([
                     'base_uri' => $_ENV['BASE_URL_EXCHANGERATE'],
-                    'timeout' => 120.0,
+                    'timeout'  => 120.0,
                 ]);
                 $response = $client->request('GET', 'live?access_key='.$api_key);
                 ExchangeRate::hydrate($response->getBody(), $base_currency, $referenceCurrency);
@@ -55,12 +53,11 @@ class ExchangeRate
     protected static function hydrate($response, $base_currency, $referenceCurrency)
     {
         $data = json_decode($response, true);
-       
+
         CurrencyConverted::$currency_rate = $data['quotes']['USDGBP'];
 
-        $currency_rate_key = $base_currency . $referenceCurrency;
+        $currency_rate_key = $base_currency.$referenceCurrency;
         CurrencyConverted::$currency_rate = $data['quotes'][$currency_rate_key];
-
 
         return CurrencyConverted::$currency_rate;
     }
