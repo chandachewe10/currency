@@ -7,7 +7,7 @@ class CurrencyFormats
     /**
      * Supported currencies.
      *
-     * @var formats
+     * @var array
      */
     public static $formats = [
 

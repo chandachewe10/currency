@@ -7,7 +7,7 @@ class CurrencyConverted
     /**
      * Converted Currency.
      *
-     * @var formats
+     * @var string
      */
     public static $currency_conversion;
     public static $currency_rate;
