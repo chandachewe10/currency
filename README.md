@@ -15,7 +15,12 @@ A PHP Package to convert Amount from one currency to the other.
 Install currency using `composer require`:
 
 ```bash
-composer require chandachewe/currency
+composer require chandachewe/currency 
+```
+Enter the currency directory and run the following code
+
+```bash
+composer install
 ```
 
 Add the namespaces and vendor/autoload in the file you will be doing your conversions from. Am assuming the file and the vendor are both in the root directory. In your file include the following on top:
