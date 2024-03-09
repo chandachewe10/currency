@@ -36,7 +36,7 @@ class ExchangeRate
                     'base_uri' => $_ENV['BASE_URL_EXCHANGERATE'],
                     'timeout' => 120.0,
                 ]);
-                $response = $client->request('GET', 'live?access_key=' . $api_key);
+                $response = $client->request('GET', 'live?access_key='.$api_key);
                 ExchangeRate::hydrate($response->getBody(), $base_currency, $referenceCurrency);
             }
         } catch (CurrencyNotFoundException $e) {
@@ -55,10 +55,13 @@ class ExchangeRate
     protected static function hydrate($response, $base_currency, $referenceCurrency)
     {
         $data = json_decode($response, true);
-
+       
+        CurrencyConverted::$currency_rate = $data['quotes']['USDGBP'];
 
         $currency_rate_key = $base_currency . $referenceCurrency;
         CurrencyConverted::$currency_rate = $data['quotes'][$currency_rate_key];
+
+
         return CurrencyConverted::$currency_rate;
     }
 }

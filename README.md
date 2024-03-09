@@ -27,11 +27,13 @@ Add the namespaces and vendor/autoload in the file you will be doing your conver
 
 
 ```php
- require 'vendor/autoload.php';   
+ require 'vendor/autoload.php';  
+ use Chandachewe\Currency\DriverAccessKeys\ExchangeRateDriverAccessKey; 
  use Chandachewe\Currency\Drivers\ExchangeConverter;
  use Chandachewe\Currency\Drivers\ExchangeRate;
  use Chandachewe\Currency\CurrencyConverted;
  use Chandachewe\Currency\CurrencyFormats;
+ 
 ```
 
 
@@ -41,6 +43,7 @@ Add the namespaces and vendor/autoload in the file you will be doing your conver
 You can convert the amount from one currency to the other using the following code:
 
 ```php
+ExchangeRateDriverAccessKey::$exchangerate_access_key = 'YOUR ACCESS KEY HERE';
 ExchangeConverter::convert('amount', 'from this currency', 'to this currency');
 ```
 > **Important**: See the supported currency formats below. 
@@ -48,7 +51,8 @@ ExchangeConverter::convert('amount', 'from this currency', 'to this currency');
 
 Suppose I want to convert 10 USD to GBP then my code will be:
 ```php
-ExchangeConverter::convert(10, 'USD', 'GBP');
+ExchangeRateDriverAccessKey::$exchangerate_access_key = 'YOUR ACCESS KEY HERE';
+echo ExchangeConverter::convert(10, 'USD', 'GBP');
 ```
 Then you can retrieve the result as follows: 
 ```php
@@ -59,12 +63,14 @@ echo CurrencyConverted::$currency_conversion
 ### Obtain the Exchange rate between two currencies
 You can also obtain the exchange rates between two currencies as follows: 
 ```php
+ExchangeRateDriverAccessKey::$exchangerate_access_key = 'YOUR ACCESS KEY HERE';
 ExchangeRate::exchange('from this currency', 'to this currency');
 ```
 
 Suppose I want to obtain the exchange rate between 1 USD and the GBP then my code will be as follows:
 ```php
-ExchangeRate::exchange('USD', 'GBP');
+ExchangeRateDriverAccessKey::$exchangerate_access_key = 'YOUR ACCESS KEY HERE';
+echo ExchangeRate::exchange('USD', 'GBP');
 ```
 Then you can retrieve the result as follows: 
 ```php
