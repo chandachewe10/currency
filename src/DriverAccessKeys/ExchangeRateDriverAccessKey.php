@@ -2,7 +2,7 @@
 
 namespace Chandachewe\Currency\DriverAccessKeys;
 
-class ExchangeRateDriverAcessKey
+class ExchangeRateDriverAccessKey
 {
     /**
      * Driver Keys.
